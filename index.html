@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: linear-gradient(45deg, blue, #eb80b2);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .calculator {
+        background-color: blue;
+        min-height: 400px;
+        min-width: 300px;
+        display: block;
+        border-radius: 30px;
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+      }
+
+      #input {
+        background-color: #fff;
+        width: 400px;
+        height: 30px;
+      }
+      .button {
+        background: #eb80b2;
+        color: #fff;
+        padding: 15px 40px;
+        font-size: large;
+        font-weight: bold; /* Changed font-style to font-weight */
+        border-radius: 30px;
+        border: none;
+      }
+      #result {
+        color: #000;
+        background-color: #fff;
+        width: 400px;
+        height: 30px;
+        margin-left: 50px;
+      }
+    </style>
+    <script>
+      function convert() {
+        const celsius = parseFloat(document.getElementById("input").value);
+        const fahrenheit = (celsius * 9) / 5 + 32;
+        document.getElementById("result").innerText = ` ${fahrenheit}`;
+      }
+    </script>
+    <title>Celsius to Fahrenheit Converter</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>Celsius to Fahrenheit</h1>
+      <br />
+      <br />
+      <br />
+      <input type="number" id="input" placeholder="Enter Celsius Input" />
+      <br />
+      <br />
+      <br />
+      <button onclick="convert()" class="button">Convert</button>
+      <br />
+      <br />
+      <br />
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
